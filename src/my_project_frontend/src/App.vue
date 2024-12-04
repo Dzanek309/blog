@@ -6,21 +6,29 @@ let greeting = ref('');
 async function handleSubmit(e) {
   e.preventDefault();
   const target = e.target;
-  const name = target.querySelector('#name').value;
-  await my_project_backend.greet(name).then((response) => {
-    greeting.value = response;
-  });
+  const title = targe.querySelector('#title').value;
+  const tags = target.querySelector('#tags').value;
+  const splitedTags = tags.split(',')
+
+  await my_project_backend.add_blog(title, content, splitedTags)
 }
 </script>
 
 <template>
   <main>
-    <img src="/logo2.svg" alt="DFINITY logo" />
+    <!-- <img src="/logo2.svg" alt="DFINITY logo" /> -->
     <br />
     <br />
     <form action="#" @submit="handleSubmit">
-      <label for="name">Enter your name: &nbsp;</label>
-      <input id="name" alt="Name" type="text" />
+      <div>
+        <p>Title:</p><input id="title" type="text" alt="title">
+      </div>
+      <div>
+        <p>Content:</p><input id="content" type="text" alt="title">
+      </div>
+      <div>
+        <p>Tags:</p><input id="tags" type="text" alt="title">
+      </div>
       <button type="submit">Click Me!</button>
     </form>
     <section id="greeting">{{ greeting }}</section>

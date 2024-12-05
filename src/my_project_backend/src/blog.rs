@@ -19,6 +19,3 @@ impl Blog {
         }
     }
 }
-// u32 - liczba nie ujemna która spełnia pewną zasadnę np.
-// typ "u" to inaczej unsigned ,czyli nie ujemny
-// u8 - liczba z zakresu od 0 do 255 (256 - 1)
